@@ -12,13 +12,16 @@ In order to run the simulation if you are on only one machine:
 2. Run `sbt` in all three windows (may take a long time on first launch).
 
 *First window*:
+
 3. Run the Play server and the Master actor in one of the windows by typing `run`.
 4. Connect to *http://localhost:9000/* in your browser.
 
 *Second window*:
+
 5. Type `runMain actors.MotorSystemNode 2551 soleus` in another window to run the first MotorSystem. *2551* is the port specified in *akka.cluster.seed-nodes*.
 
 *Third window*:
+
 6. Type `runMain actors.MotorSystemNode 2552 tibialis-anterior` in the last window to run the second MotorSystem. *2552* is the port specified in *akka.cluster.seed-nodes*. The simulation will now start.
 
 In order to run the simulation on several machines, the process is very similar, you just have to open the terminal windows on different machines and make sure that IP addresses and ports are configured properly (see step 3 of installation instructions).
