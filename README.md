@@ -6,8 +6,8 @@ This is a distributed Huxley-Hodgkin model implemented using Scala, Akka and Pla
 2. Clone or download this repo on all nodes that you want to run the simulation on.
 3. If you want to run the simulation on only one machine, skip this step. If you want to run the simulation on several nodes, at the bottom of *conf/application.conf* on each node, set the *akka.remote.netty.tcp.hostname* value to nodes' respective local IP addresses. Change the *akka.cluster.seed-nodes* as well: these are the IP addresses of nodes that the MotorSystems will run on. These values should be the same on all nodes.
 
-# Run the simulation
-In order to run the simulation if you are on only one machine:
+# Running the simulation
+In order to run the simulation on one machine only:
 1. Open three terminal windows and `cd` into the main directory.
 2. Run `sbt` in all three windows (may take a long time on first launch).
 
