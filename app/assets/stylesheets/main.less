@@ -1,0 +1,125 @@
+.perspective (@value) {
+  -webkit-perspective: @value;
+  -moz-perspective: @value;
+  perspective: @value;
+}
+
+.transform (@value) {
+  -webkit-transform: rotateY(@value);
+  -moz-transform: rotateY(@value);
+  transform: rotateY(@value);
+}
+
+.border-radius (@value) {
+  -webkit-border-radius: @value;
+  -moz-border-radius: @value;
+  border-radius: @value;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.navbar-inner {
+  width: 100%;
+  .container {
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.brand {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: x-large;
+  color: #9de3ff;
+  font-weight: bold;
+  &:hover {
+    text-decoration: none;
+    color: #9de3ff;
+  }
+}
+
+#loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  min-width: 100%;
+  height: 100%;
+  margin: auto;
+  p {
+    font-size: x-large;
+    font-weight: 700;
+    margin-bottom: 1em;
+  }
+
+  img {
+    height: 80px;
+  }
+}
+
+#charts {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-container {
+  .perspective(1000);
+  margin-bottom: 20px;
+  &:hover .flipper {
+    .transform(10deg);
+  }
+  &.flipped .flipper {
+  .transform(180deg);
+  }
+}
+
+.chart-holder, .details-holder {
+  width: 100%;
+  top: 0px;
+  left: 0px;
+
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.chart-holder {
+  z-index: 2;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  & p {
+    font-style: italic;
+    text-transform: capitalize;
+    margin-top: 2em;
+  }
+}
+
+.chart {
+  position: relative;
+  width: 920px;
+  height: 400px;
+}
